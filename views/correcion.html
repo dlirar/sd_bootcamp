@@ -1,0 +1,164 @@
+<!-- <?php
+	$err = isset($_GET['error']) ? $_GET['error'] : null ; // Evita las advertencias de variables no definidas.
+?> -->
+
+<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\r\n<html xmlns=\"http"
+<html lang="en">	
+<head>
+	  <meta charset="utf-8">
+	  <title>Login</title>
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  
+
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet">
+		<link href="https://framework-gb.cdn.gob.mx/assets/styles/main.css" rel="stylesheet">
+
+		 <!-- Bootstrap -->
+		<link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script> 
+        
+		<!-- jQuery -->
+        <script src="vendors/jquery/dist/jquery.min.js"></script>
+        
+		<!-- Los iconos tipo Solid de Fontawesome-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+        <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+        <!--Nuestro css-->
+        <link rel="stylesheet" type="text/css" href="system/css/index.css">
+
+	</head>
+
+	<body>
+      
+		<body>
+            
+			<div class="container">
+             <img src="static/imagen/ipn.png" width="100" height="100"><svg width="900" heigth="850" viewBox="0 0 900 70" ><text x="30" y="55" style="fill: white; stroke: #000; stroke-width: 3px; font-size: 55px; font-weight: bold; font-family: arial">Escuela Superior de C&oacute;mputo<img src="static/imagen/escom.png" width="100" height="100"></text></svg>
+            <\div>
+				<div id="te2"><br/>
+					<div style="
+						display: center;
+						width: 390px;
+                        heigth: 250px;
+						margin: 0 auto;
+                        margin-top:15%;
+						border: 2px solid #848484;
+						padding: 0px 20px; 
+						background-color: powderblue;
+                        border-radius: 25px;
+                        opacity: .95;
+                        ">
+                        
+                        <div class="col-12 user-img">
+                        <img src="system/Imagenes/avartar.png"></div>
+						
+						<form action="system/log_in/checklogin.php" method="post">
+						<table width="360" border="0" cellpadding="10" cellspacing="10" > <!-- 960-->
+								<tr>
+									<td width="100" align="left"></td> <!-- 271 right-->
+									<td width="100" align="right"></td> <!-- 294 right-->
+								</tr>
+								<tr>
+									<td colspan="2" align="center">
+									<!-- <td align="left"> -->
+										<?php switch ($err) {		//mensajes de error en pantalla
+												case 1:
+													echo "<p>Usuario no Existe </p>";
+													break;
+												case 2:
+													echo "<p>Inicie sesi&oacute;n para acceder al sitio. </p>";
+													break;
+												case 3:
+													echo "<p>Usuario inactivo contacte a su administrador </p>";
+													break;
+												case 4:
+													echo "<p>Password incorrecto, intente de nuevo. </p>";
+													break;
+												default:
+													echo "&nbsp;";
+												}
+										?>
+									</td>
+									<!-- <td align="left">&nbsp;</td> -->
+								 </tr>	
+                            <form class="col-12">
+
+                            <div class="form-group" id="user-group">
+
+                            <div class="input-group">
+                            	<div class="input-group-addon">
+                            		<i class="fas fa-user"></i>
+                            	</div>
+	                            <input type="text" class="form-control" name="username" placeholder="Nombre de usuario"/>
+	                            </div>
+                            </div>
+                           
+
+				            <div class="form-group" id="contrasena-group">
+				            	<div class="input-group">
+				            		<div class="input-group-addon">
+				            			<i class="fas fa-lock"></i>
+				            		</div>
+				            			<input type="password" class="form-control" name="password" id="password" placeholder="Contrase&ntilde;a" />
+				            		</div>
+				            	</div>
+                                
+								 <tr>
+									<td align="left"><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal_2">Adm</button></td>
+									<td align="left"><input type="submit" name="Submit" class="btn btn-success" value="Log in" data-toggle="collapse" data-target="#collapseTwo1">
+									<!--<a href="#">Olvidaste tu Contraseña?</a> -->
+										<a href="system/log_in/newuser.php">Nuevo usuario?</a>
+										</input></td>
+								 </tr>
+ 								<tr>
+									<td align="left">&nbsp;</td>
+									<td align="left">&nbsp;</td>
+								 </tr>
+                               </form> 
+							</table> 
+						</form> <!-- form -->
+					</div>
+				</div> <!-- "te2" -->
+			</div> <!-- container -->
+			
+				   <!-- Modal 2-->
+				  <div class="modal fade" id="myModal_2" role="dialog">
+					<div class="modal-dialog modal-lg">
+					
+					  <!-- Modal content-->
+					  <div class="modal-content">
+						<div class="modal-header">
+						  <button type="button" class="close" data-dismiss="modal">&times;</button>
+						  <h4 class="modal-title">Administraci&oacute;n</h4>
+						</div>
+						<div class="modal-body">
+							<p>Utilice la clave de administraci&oacute;n.</p>
+							<form action="system/log_in/checkloginadm.php" method="post">
+								<label>Password:<span class="required">*</span></label>
+								<input type="password" name="password"  id="password" placeholder="Password" required>
+								<input type="submit" name="Submit" class="btn btn-success" value="Logadmin" data-toggle="collapse" data-target="#collapseTwo1">
+							</form>
+						</div>
+						<div class="modal-footer">
+						  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					  </div>
+					  
+					</div>
+				  </div>	<!--DIv modal fade -->		
+			
+		</body>
+			
+		<div> <!-- div footer -->
+			<footer>
+			</footer>
+		</div> <!-- div footer -->
+	
+	</body>
+
+
+
+
+</html>
+&copy;2019 Escuela Superior de C&oacute;mputo

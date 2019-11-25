@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>web components: shadow DOM ONLY</title>
+</head>
+<body>
+
+	<template id="tpl">
+		<img src="perro.jpg" alt="perrito triste" class="img">
+		<figcaption>Perrito triste</figcaption>	
+	</template>
+
+	<div id="host">
+
+	</div>
+	
+	<script type="text/javascript">
+		const tpl = document.getElementById("tpl");
+		const host = document.getElementById("host");
+		const shadowRoot = host.attachShadow({mode: 'open'});
+		const content = tpl.content.cloneNode(true);
+
+		shadowRoot.appendChild(content);
+	</script>
+</body>
+</html>

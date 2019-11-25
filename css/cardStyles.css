@@ -1,0 +1,48 @@
+.card{
+	width: 300px;
+	height: auto;
+	background-color: #C2C9CD; 
+	margin: 10px	;
+	overflow: hidden;
+}
+
+.card:hover{
+	box-shadow: 5px 5px grey;
+}
+
+.card-image{
+	width: 250px;
+	height: 250px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	display: block;
+}
+
+.card-title{
+	font-size: 20px;
+	font-family: "Times New Roman", Times, serif;
+	text-align: center;
+}
+
+.card-text{
+	text-align: justify;
+	font-style: italic;
+	font-size: 20px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.card-button{
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 5px;
+	display: block;
+	background-color: #008000;
+	border-style: none;
+}
+
+.card-button a{
+	color: #FFFFFF;
+	text-decoration: none;
+}

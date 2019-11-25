@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mi componente</title>
+</head>
+<body>
+	<style>
+		mi-persona{
+			display: block;
+			border: 1px solid black;
+		}
+	</style>
+
+	<mi-persona></mi-persona>
+
+	<script type="text/javascript">
+		{
+			class MiPersona extends HTMLElements {
+				constructor(){
+					super();
+					console.log(constructor);
+				}
+
+				//Cuando el elememto se inserta en el DOM
+				connectedCallback(){
+					console.log('connectedCallback');
+				}
+
+				attributeChangedCallback(attrName, oldValue, newValue){
+					console.log(attrName, oldValue, newValue, 'attributeChangedCallback');
+				}
+
+				//Cuando un elemento lo pasamos a otro documento
+				adoptedCallback(){
+					console.log('adoptedCallback');
+				}
+
+				//Quitar o eliminar del DOM
+				disconnectedCallback(){
+					console.log('disconnectedCallback');
+				}
+			}
+		}
+	</script>
+</body>
+</html>

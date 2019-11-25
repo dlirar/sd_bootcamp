@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Template</title>
+	<link rel="stylesheet" type="text/css" href="template.css">
+</head>
+<body>
+	<template id="template">
+		<div class="container">
+			<span class="nombre">perrito</span>
+			<img src="perro.jpg" alt="Texto alterno" class="img">
+			<div class="text-container">
+				<p class="descripcion">El meme del perrito triste, el cual no ha parado de reproducirse en redes sociales, es uno muy similar al delviejo lesbiano, ya que es amado y odiado por muchos y porque podemos utilizarlo en diversas situaciones, como para hacerles memes a los políticos, a los futbolistas, a los músicos, youtubers, películas y a cualquier personaje de cualquier época etc.</p>	
+			</div>
+		</div>	
+	</template>
+
+	<div id="huesped">
+		
+	</div>
+
+	<script type="text/javascript">
+		const host = document.getElementById("huesped");
+		const tpl = document.getElementById("template");
+
+		const tplInst = tpl.content.cloneNode(true);
+
+		host.appendChild(tplInst);
+
+	</script>
+</body>
+</html>

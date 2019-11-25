@@ -1,0 +1,169 @@
+
+body{
+	background-color: #D7D3DE;
+}
+
+ul{
+	position: sticky;
+	align-self: flex-start;
+	width: auto;
+}
+
+li{
+	display: block;
+}
+
+li:hover{
+	cursor: pointer;
+}
+
+li, ul{
+	list-style: none;
+}
+
+ul li ul {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;  
+  left: 0;
+  display: none;
+}
+
+ul li:hover > ul,
+ul li ul:hover {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
+
+#products{
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+  	display: flex;
+	-webkit-flex-flow: row wrap;
+  	justify-content: space-around;
+}
+
+#footer-title, #footer-subtitle{
+	color: white;
+}
+
+#footer-description{
+	color: #565C6B;
+}
+
+.container{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+}
+
+.navbar{
+	width: 100%;
+	height: 80px;
+	background-color: #255780;
+
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+}
+
+.navbar>.navbar-section-right{
+	align-self: center;
+	
+}
+
+.navbar-section-left{
+	margin-right: auto;
+}
+
+.navbar-section-right{
+	width: 50%;
+	margin-right:5%;
+}
+
+.navbar-section-right>*{
+	margin-right: 20px;
+}
+
+.input{
+	width: 40%;
+}
+
+.navbar-title{
+	color: white;
+	font-style: italic;
+	text-decoration: none;
+	margin-left:5px;
+}
+
+.footer{
+	background-color: #373B44;
+}
+
+.two-columns{
+	width: 100%;
+	height: auto;
+	display: flex;
+	padding: 20px;
+	align-items: baseline;
+}
+
+.footer-section-left{
+	width: 50%;
+}
+
+.footer-section-left>h2,h3{
+	margin: 0;
+
+}
+
+.footer-section-right{
+	margin-right: auto;
+	margin-left: 10%;
+	width: auto;
+	display: flex row;
+}
+
+.footer-statistics{
+	background-color: #121316;
+	-webkit-flex-flow: row wrap;
+	width: 400px;
+}
+
+.footer-statistics>span{
+	color: white;
+}
+
+.footer-statistics>*{
+	padding: 5px;
+}
+
+.footer-section-title{
+	color: #565C6B;
+}
+
+.footer-section-text{
+	color: #AAB2C4;
+}
+
+.one-column{
+	padding-left: 20px;
+}
+
+.image-app{
+	width: 100px;
+	height: 50px;
+}
+
+.image-social{
+	width: 40px;
+	height: 40px;
+	margin-right: 5px;
+	border-radius: 50%;
+	filter: grayscale(100%);
+}

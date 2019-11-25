@@ -1,0 +1,87 @@
+body{
+	font-size: 18px;
+}
+
+main{
+	display: flex;
+}
+
+h1{
+	font-size: 34px;
+	color: red;
+}
+
+a{
+	color: orange;
+}
+
+a:visited{
+	color: gray;
+}
+
+a:link{
+	border: 2px solid black;	
+}
+
+a:hover{
+	font-size: 20px;
+}
+
+a:active{
+	color: orange;
+}
+
+.section-titles{
+	font-size: 30px;
+	color: green;
+}
+
+.col{
+	margin-left: 15px;
+	margin-right: 15px;
+	border: 1px solid grey;
+	padding: 40px 100px 50px; /*top right bottom left*/
+}
+
+.col h1{
+	margin-top: 0;
+}
+
+#ingredientes{
+	font-style: italic;
+	margin-bottom: 50px;
+	margin-right: 100px;
+}
+
+#ingredientes li:first-child{ /*pseudoclase*/
+	color: orange
+}
+
+#utensilios{
+	margin-bottom: 50px;
+}
+
+#utensilios::before{
+	display: block;
+	content: '';
+	width: 100px;
+	height: 100px;
+	background-color: blue;
+}
+
+#utensilios::after{
+	display: block;
+	content: '';
+	width: 100px;
+	height: 100px;
+	background-color: red;
+}
+
+#preparacion{
+	margin-bottom: 170px;
+}
+
+details[open]{
+	background-color:indigo;
+	color: white;
+}

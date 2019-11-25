@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mi Boton Custom Elements</title>
+	<style type="text/css">
+		mi-boton{
+			display: block;
+			width: 100px;
+			height: 50px;
+			border: 1px solid blue;
+		}
+	</style>
+</head>
+<body>
+
+	<mi-boton></mi-boton>
+
+	<script type="text/javascript">
+
+		class MiBoton extends HTMLElement {
+			constructor(){
+				super();
+				this.escucharEventos();
+			}
+		
+		escucharEventos(){
+			this.addEventListener('click', this.dispararMiEvento);
+		}
+
+		dispararMiEvento(){
+			const miEvento = new CustomEvent('mi-evento', {
+				bubble: true,
+				details: {
+					nombre: "Jaime",
+					edad: 32
+				}
+			});
+
+			this.dispatchEvent(miEvento);
+		}
+	}
+
+	customElements.define('mi-boton', MiBoton);
+	</script>
+</body>
+</html>
+
+<!--bubble que hasta el "tatarabuelo" escuche el evento 
+details cuando escuche el evento va a traer esos datos-->

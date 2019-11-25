@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="cardStyles.css">
+</head>
+<body>
+	<div id="container"></div>
+
+	<script type="text/javascript">
+		var products = [
+
+			{
+				name: "yamaha rgx custom",
+				inventory: 5,
+				unit_price: 45.99,
+				text: "texto de prueba para ver si jala",
+				image: "yamaha.png"
+			},
+			{
+				name: "yamaha rgx 1212s",
+				inventory: 10,
+				unit_price: 123.75,
+				text: "texto de prueba para ver si jala aqui tambien",
+				image: "yamaha.png"
+
+			},
+			{
+				name: "yamaha",
+				inventory: 2,
+				unit_price: 399.50,
+				text: "texto de prueba para ver si jala por acá igual",
+				image: "yamaha.png"
+
+			}
+		];
+
+		var htmlfinal = "";
+		for(var i=0; i< products.length ; i++ ){
+			htmlfinal += 
+			"<section class='card'>" + 
+			"<img class='card-image' alt='" + products[i].name + "' src='"+ products[i].image + "'>" +
+			"<h1 class='card-title'>"+ products[i].name + "</h1>" +
+			"<p class='card-text'>" + products[i].text + "</p>" + 
+			"<button class='card-button'> <a href='#'> Comprar ahora </a> </button>" + 
+			"</section>"; 
+		}
+
+		document.getElementById("container").innerHTML = htmlfinal;
+	</script>
+</body>
+</html>

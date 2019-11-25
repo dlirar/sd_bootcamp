@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ciclo de vida de un componente.</title>
+</head>
+<body>
+	<style type="text/css">
+		mi-mensaje{
+			display: block;
+
+			border: 2px solid green;
+		}	
+	</style>
+
+	<mi-mensaje msj="un mensaje">
+		<p>Texto para que se vea</p>
+	</mi-mensaje>
+	<script type="text/javascript">
+		{
+			class MiMensaje extends HTMLElement {
+				constructor(){
+					super();
+					console.log('constructor');
+				}
+
+				static get observedAttributes(){
+					return ['msj', 'casi-visible'];
+				}
+
+				get msj(){
+					return this.getAttribute('msj');
+				}
+
+				set msj(value){
+				   this.setAttribute('msj', value);
+				}
+
+				get casiVisible(){
+					return this.getAttribute('msj');
+				}
+
+				set casiVisible(value){
+					if(value){
+						this.setAttribute('casi-visible', '');
+					}
+
+					this.removeAttribute('casi-visible');
+				}
+				//Cuando el elememto se inserta en el DOM
+				connectedCallback(){
+					console.log('connectedCallback');
+				}
+
+				attributeChangedCallback(attrName, oldValue, newValue){
+					if(attrName === 'msj'){
+						this.innerHTML = newValue;
+					}
+
+					if(attrName === 'casi-visible'){
+						this.setCasiVisible();
+					}
+					console.log(attrName, oldValue, newValue, 'attributeChangedCallback');
+				}
+
+				setCasiVisible(){
+					if(this.casiVisible){
+						this.style.opacity = 0.3;
+					}else{
+						this.Style.opacity = 1;
+					}
+				}
+
+				//Cuando un elemento lo pasamos a otro documento
+				adoptedCallback(){
+					console.log('adoptedCallback');
+				}
+
+
+				//Quitar o eliminar del DOM
+				disconnectedCallback(){
+					console.log('disconnectedCallback');
+				}
+			}
+
+			customElements.define('mi-mensaje', MiMensaje);
+		}
+	</script>
+</body>
+</html>
